@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import PrimaryCard from './Components/PrimaryCard';
 import SecondaryCard from './Components/SecondaryCard';
 import PatientForm1 from './Components/PatientForm1';
+import PatientForm2 from './Components/PatientForm2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,10 @@ root.render(
     <PrimaryCard>
       <PatientForm1 />
     </PrimaryCard>
+    <div className='mt-5'></div>
+    <SecondaryCard>
+      <PatientForm2 />
+    </SecondaryCard>
   </>
 );
 

@@ -14,8 +14,16 @@
   color: #487F7F;
 }
 
+.text-secondary-color {
+  color: #105050;
+}
+
 .bg-secondary-card {
   background-color: rgba(115, 207, 207, 0.13);
+}
+
+.accent-secondary-color {
+  accent-color: #105050;
 }
 
 .remove-arrow::-webkit-inner-spin-button,
