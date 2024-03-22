@@ -1,0 +1,42 @@
+.font-abel {
+    font-family: "Abel";
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.font-montserrat {
+    font-family: "Montserrat";
+    font-weight: 300;
+    font-style: normal;
+}
+
+.text-main-color {
+  color: #487F7F;
+}
+
+.bg-secondary-card {
+  background-color: rgba(115, 207, 207, 0.13);
+}
+
+.remove-arrow::-webkit-inner-spin-button,
+.remove-arrow::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.remove-arrow {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.remove-calendar::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
