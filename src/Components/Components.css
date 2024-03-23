@@ -10,6 +10,12 @@
     font-style: normal;
 }
 
+.font-kanit {
+    font-family: "Kanit";
+    font-weight: 500;
+    font-style: normal;
+}
+
 .text-main-color {
   color: #487F7F;
 }
@@ -18,12 +24,24 @@
   color: #105050;
 }
 
+.text-tertiary-color {
+  color: #90BCBC;
+}
+
 .bg-secondary-card {
   background-color: rgba(115, 207, 207, 0.13);
 }
 
 .accent-secondary-color {
   accent-color: #105050;
+}
+
+.button-primary-color {
+  background-color: #105050;
+}
+
+.button-primary-color:hover {
+  background-color: #90BCBC;
 }
 
 .remove-arrow::-webkit-inner-spin-button,
