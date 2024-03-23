@@ -3,30 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import PrimaryCard from './Components/PrimaryCard';
-import SecondaryCard from './Components/SecondaryCard';
-import PatientForm1 from './Components/PatientForm1';
-import PatientForm2 from './Components/PatientForm2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <div className='mt-5'></div>
-    <PrimaryCard>
-      <App />
-    </PrimaryCard>
-    <div className='mt-5'></div>
-    <SecondaryCard>
-      <App />
-    </SecondaryCard>
-    <div className='mt-5'></div>
-    <PrimaryCard>
-      <PatientForm1 />
-    </PrimaryCard>
-    <div className='mt-5'></div>
-    <SecondaryCard>
-      <PatientForm2 />
-    </SecondaryCard>
+    <App />
   </>
 );
 

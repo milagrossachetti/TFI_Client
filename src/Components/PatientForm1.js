@@ -2,7 +2,7 @@ import './Components.css';
 
 function PatientForm1() {
     return (
-        <div className='container grid grid-cols-1 gap-2'>
+        <div className='grid grid-cols-1 gap-2'>
             <div>
                 <div className="font-abel text-lg text-main-color">Añadir información del paciente</div>
             </div>
