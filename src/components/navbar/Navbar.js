@@ -11,7 +11,7 @@ import { AccountCircleOutlined, House } from '@mui/icons-material';
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ backgroundColor: '#64B9B9' }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -33,11 +33,13 @@ export default function Navbar() {
         boxShadow: 'none'}}>
         <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
           <Button sx={{
-            fontSize:"15px",
+            fontSize:"18px",
+            fontFamily: "Abel",
             color:"black",
-            borderBottom: "3px solid #1976d2"}}>Agregar</Button>
+            borderBottom: "3px solid #64B9B9"}}>Agregar</Button>
           <Button sx={{
-            fontSize:"15px",
+            fontSize:"18px",
+            fontFamily: "Abel",
             color:"black"}}>Lista</Button>
         </Box>
       </AppBar>

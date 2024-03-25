@@ -51,7 +51,7 @@ function PatientRegistrationForm() {
                                     <PatientForm2 title="PRÓTESIS REMOVIBLES EXISTENTES" namePrefix="existingProstheses"/>
                                     </SecondaryCard>
                                 </div>
-                                <div className='mt-4 w-9/12'>
+                                <div className='w-9/12'>
                                     <SecondaryCard>
                                     <PatientForm2 title="NECESIDAD DE PRÓTESIS REMOVIBLES" namePrefix="needProstheses"/>
                                     </SecondaryCard>
