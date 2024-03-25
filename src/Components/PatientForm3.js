@@ -33,11 +33,17 @@ function PatientForm3() {
             <div className='flex flex-row'>
                 <input className="appearance-none bg-transparent border-b w-full font-montserrat text-sm text-main-color focus:outline-none" type="text" name='question4' aria-label="Pregunta-4"></input>
             </div>
-            <div className='flex flex-row gap-2'>
-                <span className='font-montserrat text-sm text-main-color flex-shrink-0'>¿Fuma? ¿Cuánto?</span>
+            <div className='flex flex-row'>
+                <span className='font-montserrat text-sm text-main-color'>¿Se cansa al subir o bajar las escaleras?</span>
+            </div>
+            <div className='flex flex-row'>
                 <input className="appearance-none bg-transparent border-b w-full font-montserrat text-sm text-main-color focus:outline-none" type="text" name='question5' aria-label="Pregunta-5"></input>
-                <span className='font-montserrat text-sm text-main-color flex-shrink-0'>¿Bebe? ¿Cuánto?</span>
+            </div>
+            <div className='flex flex-row gap-2 mt-1'>
+                <span className='font-montserrat text-sm text-main-color flex-shrink-0'>¿Fuma? ¿Cuánto?</span>
                 <input className="appearance-none bg-transparent border-b w-full font-montserrat text-sm text-main-color focus:outline-none" type="text" name='question6' aria-label="Pregunta-6"></input>
+                <span className='font-montserrat text-sm text-main-color flex-shrink-0'>¿Bebe? ¿Cuánto?</span>
+                <input className="appearance-none bg-transparent border-b w-full font-montserrat text-sm text-main-color focus:outline-none" type="text" name='question7' aria-label="Pregunta-7"></input>
             </div>
             <div className='flex flex-row justify-center mt-1'>
                 <span className='font-montserrat text-sm text-main-color'>AFECCIONES</span>
