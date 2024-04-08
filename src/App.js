@@ -1,7 +1,7 @@
 import './App.css';
 
-import PatientRegistrationForm from './Components/PatientRegistrationForm';
-import Navbar from './Components/Navbar/Navbar';
+import PatientRegistrationForm from './components/PatientRegistrationForm.js';
+import Navbar from './components/navbar/Navbar.js';
 
 function App() {
   return (
