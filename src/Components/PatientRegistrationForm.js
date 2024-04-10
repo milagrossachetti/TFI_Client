@@ -10,7 +10,7 @@ import RequiredFieldsLabel from './RequiredFieldsLabel'
 function PatientRegistrationForm() {
     //para obtener las preguntas a partir del get
     const[listQuestion, setListQuestions] = useState([]);
-    const {register, handleSubmit, control} = useForm();
+    const {register, handleSubmit, control, formState: { errors }} = useForm();
     const onSubmit = handleSubmit((data) => {
         const filteredAnswers = data.answers.filter(answer => answer !== null);
         const dataToSend = {
@@ -109,44 +109,90 @@ function PatientRegistrationForm() {
     return (
         <PrimaryCard>
             <form onSubmit={onSubmit}>
-                <div className="grid grid-cols-2 grid-rows-2 gap-2">
+            <div className="grid grid-cols-2 gap-2">
                     <div className='grid grid-cols-1 gap-2'>
                         <h4 className="font-abel text-lg text-main-color">Añadir información del paciente</h4>
                         <div className='flex flex-row items-center gap-4'>
                             <label htmlFor='name' className='font-montserrat text-base text-main-color'>Nombre*</label>
-                            <input type='text' id='name' name='name' {...register('name', {required: true})} className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none"></input>
+                            <input type='text' id='name' name='name' className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none"
+                            {...register('name', {required: {
+                                        value: true,
+                                        message: 'El nombre es requerido'}})}></input>
+                            {errors.name && <span>{errors.name.message}</span>}
                         </div>
                         <div className='flex flex-row items-center gap-4'>
                             <label htmlFor='id' className='font-montserrat text-base text-main-color'>DNI*</label>
-                            <input type='text' id='id' {...register('id', {required: true})} className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none"></input>
+                            <input type='text' id='id' className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none" 
+                            {...register('id', {
+                                required: {
+                                        value: true,
+                                        message: 'El DNI es requerido'},
+                                minLength: {
+                                        value: 8,
+                                        message: 'El DNI debe tener 8 caracteres'},
+                                maxLength: {
+                                        value: 8,
+                                        message: 'El DNI debe tener 8 caracteres'}
+                            })}></input>
+                            {errors.id && <span>{errors.id.message}</span>}
                         </div>
                         <div className='flex flex-row items-center gap-4'>
                             <label htmlFor='birthday' className='font-montserrat text-base text-main-color'>Fecha de nacimiento*</label>
-                            <input type='date' id='birthday' {...register('birthday', {required: true})} className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none"></input>
+                            <input type='date' id='birthday' className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none" {...register('birthday', {
+                                required: {
+                                        value: true,
+                                        message: 'La fecha de nacimiento es requerida'}
+                            })}></input>
+                            {errors.birthday && <span>{errors.birthday.message}</span>}
                         </div>
                         <div className='flex flex-row items-center gap-4'>
                             <label htmlFor='phone' className='font-montserrat text-base text-main-color'>Celular*</label>
-                            <input type='tel' id='phone' {...register('phone', {required: true})} className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none"></input>
+                            <input type='tel' id='phone' className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none" {...register('phone', {
+                                required: {
+                                        value: true,
+                                        message: 'El número de teléfono es requerido'}
+                            })}></input>
+                            {errors.phone && <span>{errors.phone.message}</span>}
                         </div>
                         <div className='flex flex-row items-center gap-4'>
                             <label htmlFor='mail' className='font-montserrat text-base text-main-color'>Correo electrónico*</label>
-                            <input type='email' id='mail' {...register('mail', {required: true})} className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none"></input>
+                            <input type='email' id='mail' className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none" {...register('mail', {required: {
+                                        value: true,
+                                        message: 'El email es requerido'}
+                            })}></input>
+                            {errors.mail && <span>{errors.mail.message}</span>}
                         </div>
                         <div className='flex flex-row items-center gap-4'>
                             <label htmlFor='sex' className='font-montserrat text-base text-main-color'>Sexo*</label>
-                            <input type='text' id='sex' {...register('sex', {required: true})} className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none"></input>
+                            <input type='text' id='sex' className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none" {...register('sex', {required: {
+                                        value: true,
+                                        message: 'El sexo es requerido'}
+                            })}></input>
+                            {errors.sex && <span>{errors.sex.message}</span>}
                         </div>
                         <div className='flex flex-row items-center gap-4'>
                             <label htmlFor='age' className='font-montserrat text-base text-main-color'>Edad*</label>
-                            <input type='text' id='age' {...register('age', {required: true})} className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none"></input>
+                            <input type='text' id='age' className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none" {...register('age', {required: {
+                                        value: true,
+                                        message: 'La edad es requerida'}
+                            })}></input>
+                            {errors.age && <span>{errors.age.message}</span>}
                         </div>
                         <div className='flex flex-row items-center gap-4'>
                             <label htmlFor='address' className='font-montserrat text-base text-main-color'>Dirección*</label>
-                            <input ttype='text' id='address' {...register('address', {required: true})} className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none"></input>
+                            <input ttype='text' id='address' className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none" {...register('address', {required: {
+                                        value: true,
+                                        message: 'La dirección es requerida'}
+                            })}></input>
+                            {errors.address && <span>{errors.address.message}</span>}
                         </div>
                         <div className='flex flex-row items-center gap-4'>
                             <label htmlFor='location' className='font-montserrat text-base text-main-color'>Localidad*</label>
-                            <input type='text' id='location' {...register('location', {required: true})} className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none"></input>
+                            <input type='text' id='location' className="appearance-none bg-transparent border-b w-full font-montserrat text-main-color focus:outline-none" {...register('location', {required: {
+                                        value: true,
+                                        message: 'La localidad es requerida'}
+                            })}></input>
+                            {errors.location && <span>{errors.location.message}</span>}
                         </div>
                         <SecondaryCard>
                             <FirstQuestionsComponent questions={firstQuestions}/>
@@ -157,12 +203,12 @@ function PatientRegistrationForm() {
                     </SecondaryCard>
                 </div>
                 <div className='flex items-center justify-between px-4 m-1'>
-                        <RequiredFieldsLabel>
-                            Los campos que contienen (*) son campos que tienen que completarse sin excepción
-                        </RequiredFieldsLabel>
-                        <div className='mr-4'>
-                            <button type="submit">Aceptar</button>
-                        </div>
+                    <RequiredFieldsLabel>
+                        Los campos que contienen (*) son campos que tienen que completarse sin excepción
+                    </RequiredFieldsLabel>
+                    <div className='mr-4 bg-custom-green rounded-3xl'>
+                        <button type="submit" className='text-center font-montserrat text-base text-white px-8 py-2 m-2'>Aceptar</button>
+                    </div>
                 </div>
             </form>
         </PrimaryCard>
